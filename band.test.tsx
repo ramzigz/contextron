@@ -6,7 +6,7 @@ const RATE_LIMITS = [
   { kind: 'seven_day', percentUsed: 75, resetsAt: '2026-11-12T14:00:00Z' },
 ]
 const band = (bodyColumns: number) =>
-  ({ plugin: 'usage-bar', component: 'AbovePrompt', props: { hasSurvey: false, bodyColumns } as any }) as const
+  ({ plugin: 'contextron', component: 'AbovePrompt', props: { hasSurvey: false, bodyColumns } as any }) as const
 
 const beneath = (on: any) => {
   on('session.measure', (_: unknown, e: any) => ({ changed: e.changed }))

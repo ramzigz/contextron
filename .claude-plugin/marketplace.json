@@ -1,6 +1,6 @@
 {
-  "name": "claude-usage-bar",
+  "name": "contextron",
   "description": "A Claude Code mod that shows context and usage limits above the prompt.",
   "owner": { "name": "ramzigz", "url": "https://github.com/ramzigz" },
-  "plugins": [{ "name": "usage-bar", "source": "./", "description": "Context, 5h and weekly usage as bars above the prompt, with a Compact button." }]
+  "plugins": [{ "name": "contextron", "source": "./", "description": "Context, 5h and weekly usage as bars above the prompt, with a Compact button." }]
 }

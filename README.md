@@ -1,8 +1,8 @@
-# usage-bar
+# Contextron
 
 A Claude Code mod that shows your context and usage limits as a one-line band above the prompt:
 
-![The usage-bar band above the prompt](screenshot.png)
+![The Contextron band above the prompt](screenshot.png)
 
 - **context**: how full the context window is, with the token count, measured like `/context` against the window where compaction happens.
 - **5h** and **week**: how much of your 5-hour and weekly usage limits you've used, with a countdown to each reset. They refresh every 2 minutes from a background `claude -p /usage`, which uses no tokens, so they also count your other sessions and claude.ai.
@@ -17,26 +17,28 @@ It works in the terminal and in the Claude desktop app.
 In Claude Code, run:
 
 ```
-/plugin marketplace add ramzigz/claude-usage-bar
-/plugin install usage-bar@claude-usage-bar
+/plugin marketplace add ramzigz/contextron
+/plugin install contextron@contextron
 ```
 
 Then run `/reload-plugins`, or start a new session.
+
+Contextron used to be called usage-bar. If you installed it under that name, remove the old one first, or you'll see two bands: `claude plugin uninstall usage-bar@claude-usage-bar && claude plugin marketplace remove claude-usage-bar`.
 
 If the install says "4 userConfig options not yet set", you can ignore it: the mod uses the defaults under [Settings](#settings) until you change them.
 
 To update later, run this in a shell, then `/reload-plugins`:
 
 ```
-claude plugin marketplace update claude-usage-bar && claude plugin update usage-bar@claude-usage-bar
+claude plugin marketplace update contextron && claude plugin update contextron@contextron
 ```
 
 ## Settings
 
-In Claude Code, run `/plugin configure usage-bar@claude-usage-bar`. From a shell, the same command without the slash shows the current values, and you can set any of them like this:
+In Claude Code, run `/plugin configure contextron@contextron`. From a shell, the same command without the slash shows the current values, and you can set any of them like this:
 
 ```
-echo '{"contextWarnPercent": "60"}' | claude plugin configure usage-bar@claude-usage-bar --values-stdin
+echo '{"contextWarnPercent": "60"}' | claude plugin configure contextron@contextron --values-stdin
 ```
 
 | Setting | Default | Effect |

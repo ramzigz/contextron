@@ -1,6 +1,6 @@
 import { expect, mock, test } from 'claude-code/testing'
 
-const BAND = { plugin: 'usage-bar', component: 'AbovePrompt', props: { hasSurvey: false, bodyColumns: 200 } as any } as const
+const BAND = { plugin: 'contextron', component: 'AbovePrompt', props: { hasSurvey: false, bodyColumns: 200 } as any } as const
 
 for (const [label, answers, toast] of [
   ['runs /compact with no toast', true, undefined],
@@ -20,7 +20,7 @@ for (const [label, answers, toast] of [
     })
     for (const surface of ['terminal', 'desktop'] as const) {
       const ui = await $.ui.mount({ ...BAND, surface })
-      await $.ui.press({ plugin: 'usage-bar', key: 'compact', surface })
+      await $.ui.press({ plugin: 'contextron', key: 'compact', surface })
       await ui.unmount()
     }
     expect(commands).toEqual(answers ? ['compact', 'compact'] : [])

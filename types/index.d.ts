@@ -4,6 +4,6 @@ export type Tick = { now?: number }
 
 declare module 'claude-code' {
   interface PluginState {
-    'usage-bar': { limits: Limits; context: Context; tick: Tick }
+    'contextron': { limits: Limits; context: Context; tick: Tick }
   }
 }

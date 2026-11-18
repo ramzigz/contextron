@@ -10,9 +10,9 @@ const PAD = 1
 const MINUTE = 60_000
 const LEVEL_COLORS = { ok: '#22c55e', warn: '#f97316', over: '#ef4444' } as const
 
-const limits = atom({ plugin: 'usage-bar', key: 'limits' } as const, {} as Limits)
-const context = atom({ plugin: 'usage-bar', key: 'context' } as const, {} as Context)
-const tick = atom({ plugin: 'usage-bar', key: 'tick' } as const, {} as Tick)
+const limits = atom({ plugin: 'contextron', key: 'limits' } as const, {} as Limits)
+const context = atom({ plugin: 'contextron', key: 'context' } as const, {} as Context)
+const tick = atom({ plugin: 'contextron', key: 'tick' } as const, {} as Tick)
 
 export type Level = keyof typeof LEVEL_COLORS
 export type Thresholds = { warn: number; alert: number }
